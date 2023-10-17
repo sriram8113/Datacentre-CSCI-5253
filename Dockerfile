@@ -1,10 +1,9 @@
-FROM python:3.10.0
-
-RUN pip install pandas 
-RUN pip install numpy
+FROM python:3.9.1
 
 WORKDIR /app
 
-COPY pipeline.py pipeline.py
+COPY pipeline_v2.py pipeline_v2.py
 
-ENTRYPOINT [ "bash" ]
+RUN pip install pandas sqlalchemy psycopg2
+
+ENTRYPOINT [ "python", "pipeline_v2.py" ]
