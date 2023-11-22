@@ -30,32 +30,32 @@ default_args = {
 }
 
 
-dag = DAG('Shelter_Dag_cloud',
+dag = DAG('austin_shelter_data_dags',
           default_args=default_args,
-          description='DAG which pulls, transforms and loads data into a cloud RDS',
+          description='Sequential Dags that performs the ETL operation',
           schedule_interval=timedelta(days=1))
 
 
-retrieve_data_task = PythonOperator(
-    task_id='extract',
+extract_data_task = PythonOperator(
+    task_id='extract_Data',
     python_callable=extract_data,
     dag=dag)
 
 
 
 transform_data_task = PythonOperator(
-    task_id='transform',
+    task_id='transform_Data',
     python_callable=transform_data,
     dag=dag)
 
 
 load_data_task = PythonOperator(
-    task_id='load',
+    task_id='load_Data',
     python_callable=load_data,
     dag=dag)
 
 
 
-retrieve_data_task >> transform_data_task >> load_data_task
+extract_data_task >> transform_data_task >> load_data_task
 
 
