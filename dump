@@ -1,0 +1,189 @@
+from airflow import DAG
+from airflow.operators.python_operator import PythonOperator
+from datetime import datetime, timedelta
+import pandas as pd
+import requests
+import boto3
+import requests
+import io
+
+URL = "https://data.austintexas.gov/resource/9t4d-g238.json"  
+YOUR_ACCESS_KEY = "AKIAZKUHUNYSBK6XPTVB"
+YOUR_SECRET_KEY = "Bf31iAqYPaHYNicudGAHaxxibpMtfoakdaXLl0KX"
+BUCKET_NAME = "airflow-dcsc-bucket-1"
+
+default_args = {
+    'owner': 'airflow',
+    'depends_on_past': False,
+    'start_date': datetime(2023, 11, 1),
+    'email_on_failure': False,
+    'email_on_retry': False,
+    'retries': 1,
+    'retry_delay': timedelta(minutes=5),
+}
+
+
+dag = DAG('austin_animal_shelter_dag',
+          default_args=default_args,
+          description='DAG for Austin Animal Shelter Data',
+          schedule_interval=timedelta(days=1))
+
+
+
+
+def retrieve_data():
+    df = pd.read_json(URL)
+
+    # Convert DataFrame to CSV format and store in a string buffer
+    csv_buffer = io.StringIO()
+    df.to_csv(csv_buffer, index=False)
+
+    # Convert string buffer to bytes
+    file_content = csv_buffer.getvalue().encode()
+
+    # AWS S3 client initialization
+    s3 = boto3.client(
+        's3',
+        aws_access_key_id=YOUR_ACCESS_KEY,  # Replace with your access key
+        aws_secret_access_key=YOUR_SECRET_KEY  # Replace with your secret key
+    )
+    bucket_name = BUCKET_NAME  # Replace with your S3 bucket name
+    s3_object_name = 'raw_data/austin_animal_outcomes.csv'  # Destination object key in S3
+
+    # Upload to S3
+    s3.put_object(Bucket=bucket_name, Key=s3_object_name, Body=file_content)
+
+retrieve_data_task = PythonOperator(
+    task_id='retrieve_data',
+    python_callable=retrieve_data,
+    dag=dag)
+
+
+
+
+
+
+def transform_data():
+    s3 = boto3.client(
+        's3',
+        aws_access_key_id=YOUR_ACCESS_KEY,
+        aws_secret_access_key=YOUR_SECRET_KEY
+    )
+    bucket_name = BUCKET_NAME  # Replace with your S3 bucket name
+    s3_object_name = 'raw_data/austin_animal_outcomes.csv'
+
+    # Download the file from S3
+    obj = s3.get_object(Bucket=bucket_name, Key=s3_object_name)
+    df = pd.read_csv(io.BytesIO(obj['Body'].read()))
+
+    # Perform transformations
+    data = df.copy() # Example transformation
+
+#################################################################################
+
+    data.fillna('Not Recorded',inplace=True)
+    data['outcome_type_id'] = data.index + 1
+    data['outcome_event_id'] = data.index + 1
+
+
+
+    # Dividing into entities 
+    animal_table = ['animal_id', 'breed', 'color', 'name','date_of_birth','animal_type']
+    outcome_table = ['outcome_type_id','outcome_type']
+    outcome_event = ['outcome_event_id','datetime','sex_upon_outcome','outcome_subtype','animal_id','outcome_type']
+    data_colums_order = ['animal_id',
+            'outcome_type_id','outcome_event_id']
+
+    data_colums_order = ['animal_id',
+            'outcome_type','outcome_event_id']
+
+    # re-ordering
+    animal = data[animal_table]
+    outcomes = data[outcome_table]
+    outcome_events = data[outcome_event]
+    data = data[data_colums_order]
+   
+    # Correcting Duplication
+    animal.drop_duplicates(inplace=True)
+    outcomes = pd.DataFrame(pd.Series(outcomes['outcome_type'].unique(),name='outcome_type'))
+    outcomes['outcome_type_id'] = outcomes.index + 1 
+    outcomes = outcomes[['outcome_type_id','outcome_type']]
+    outcomes_2 = outcomes[['outcome_type','outcome_type_id']]
+    
+    dictionary_of_outcomes = dict(zip(outcomes_2['outcome_type'],outcomes_2['outcome_type_id']))
+    outcome_events['outcome_type_id']= outcome_events['outcome_type'].map(dictionary_of_outcomes)
+
+    outcome_events = outcome_events.drop('outcome_type', axis=1)
+
+
+    data["outcome_type_id"] = data['outcome_type'].map(dictionary_of_outcomes)
+    data = data.drop('outcome_type', axis=1)
+
+  
+#################################################################################
+
+
+    # Upload transformed data back to S3
+    out_buffer = io.StringIO()
+    data.to_csv(out_buffer, index=False)
+    s3.put_object(Bucket=bucket_name, Key='cleaned_data/data.csv', Body=out_buffer.getvalue())
+
+    out_buffer = io.StringIO()
+    animal.to_csv(out_buffer, index=False)
+    s3.put_object(Bucket=bucket_name, Key='cleaned_data/animal.csv', Body=out_buffer.getvalue())
+  
+    out_buffer = io.StringIO()
+    outcomes.to_csv(out_buffer, index=False)
+    s3.put_object(Bucket=bucket_name, Key='cleaned_data/outcomes.csv', Body=out_buffer.getvalue())
+
+    out_buffer = io.StringIO()
+    outcome_events.to_csv(out_buffer, index=False)
+    s3.put_object(Bucket=bucket_name, Key='cleaned_data/outcomes_events.csv', Body=out_buffer.getvalue())
+    
+
+
+transform_data_task = PythonOperator(
+    task_id='transform_data',
+    python_callable=transform_data,
+    dag=dag)
+
+
+
+def load_data():
+    '''
+    s3 = boto3.client(
+        's3',
+        aws_access_key_id='YOUR_ACCESS_KEY',
+        aws_secret_access_key='YOUR_SECRET_KEY'
+    )
+    bucket_name = 'your_bucket_name'
+    s3_object_name = 'transformed_austin_animal_outcomes.csv'
+
+    # Download the file from S3
+    obj = s3.get_object(Bucket=bucket_name, Key=s3_object_name)
+    df = pd.read_csv(io.BytesIO(obj['Body'].read()))
+
+    # Database connection
+    conn = psycopg2.connect('your_connection_string')
+    cur = conn.cursor()
+
+    # Insert data into your database
+    df.to_csv('temp.csv', index=False, header=False)
+    with open('temp.csv', 'r') as f:
+        cur.copy_from(f, 'your_table_name', sep=',')
+    
+    conn.commit()
+    cur.close()
+    conn.close()
+'''
+    pass
+load_data_task = PythonOperator(
+    task_id='load_data',
+    python_callable=load_data,
+    dag=dag)
+
+
+
+retrieve_data_task >> transform_data_task >> load_data_task
+
+
