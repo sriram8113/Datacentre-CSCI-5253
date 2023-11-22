@@ -8,8 +8,8 @@ import requests
 import io
 
 URL = "https://data.austintexas.gov/resource/9t4d-g238.json"  
-YOUR_ACCESS_KEY = "AKIAZKUHUNYSBK6XPTVB"
-YOUR_SECRET_KEY = "Bf31iAqYPaHYNicudGAHaxxibpMtfoakdaXLl0KX"
+YOUR_ACCESS_KEY = ###
+YOUR_SECRET_KEY = ###
 BUCKET_NAME = "airflow-dcsc-bucket-1"
 
 default_args = {
