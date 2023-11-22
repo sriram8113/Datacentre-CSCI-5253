@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY dags/DAG.py dags/DAG.py
 
-COPY dags/Scripts/etl.py dags/Scripts/etl.py
+COPY dags/Scripts/etl_pipeline.py dags/Scripts/etl_pipeline.py
 
 COPY dags/secrets.env dags/secrets.env
 
