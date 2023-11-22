@@ -1,6 +1,6 @@
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-from Scripts.pipeline_v3 import extract, load, transform
+from Scripts.pipeline_v3 import extract_data, load_data, transform_data
 from datetime import datetime, timedelta
 import pandas as pd
 import requests
@@ -38,20 +38,20 @@ dag = DAG('Shelter_Dag_cloud',
 
 retrieve_data_task = PythonOperator(
     task_id='extract',
-    python_callable=extract,
+    python_callable=extract_data,
     dag=dag)
 
 
 
 transform_data_task = PythonOperator(
     task_id='transform',
-    python_callable=transform,
+    python_callable=transform_data,
     dag=dag)
 
 
 load_data_task = PythonOperator(
     task_id='load',
-    python_callable=load,
+    python_callable=load_data,
     dag=dag)
 
 
