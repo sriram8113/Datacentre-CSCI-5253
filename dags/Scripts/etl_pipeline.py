@@ -32,7 +32,7 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 DATABASE_URL = DATABASE_URL.format(POSTGRES_USER,POSTGRES_PASSWORD,POSTGRES_HOST,POSTGRES_PORT,POSTGRES_DB)
 
 
-def extract():
+def extract_data():
     # AWS S3 client initialization
     s3 = boto3.client(
         's3',
@@ -89,7 +89,7 @@ def extract():
 
 
 
-def transform():
+def transform_data():
     s3 = boto3.client(
         's3',
         aws_access_key_id=YOUR_ACCESS_KEY,
@@ -173,7 +173,7 @@ def transform():
 
 # loading into Redshift
 
-def load():
+def load_data():
 
     # Initialize S3 client
     s3 = boto3.client(
