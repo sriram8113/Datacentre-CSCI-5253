@@ -1,6 +1,6 @@
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-from Scripts.pipeline_v3 import extract_data, load_data, transform_data
+from Scripts.etl_pipeline import extract_data, load_data, transform_data
 from datetime import datetime, timedelta
 import pandas as pd
 import requests
