@@ -1,0 +1,15 @@
+[2023-11-22T05:54:34.737+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: austin_shelter_data_dags.extract_Data scheduled__2023-11-07T00:00:00+00:00 [queued]>
+[2023-11-22T05:54:34.805+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: austin_shelter_data_dags.extract_Data scheduled__2023-11-07T00:00:00+00:00 [queued]>
+[2023-11-22T05:54:34.809+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-11-22T05:54:34.876+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract_Data> on 2023-11-07 00:00:00+00:00
+[2023-11-22T05:54:34.906+0000] {standard_task_runner.py:57} INFO - Started process 83 to run task
+[2023-11-22T05:54:34.984+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'austin_shelter_data_dags', 'extract_Data', 'scheduled__2023-11-07T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/DAG.py', '--cfg-path', '/tmp/tmpmshm_73h']
+[2023-11-22T05:54:35.008+0000] {standard_task_runner.py:85} INFO - Job 4: Subtask extract_Data
+[2023-11-22T05:54:35.189+0000] {task_command.py:416} INFO - Running <TaskInstance: austin_shelter_data_dags.extract_Data scheduled__2023-11-07T00:00:00+00:00 [running]> on host 5f33f9b73b3c
+[2023-11-22T05:54:35.459+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='austin_shelter_data_dags' AIRFLOW_CTX_TASK_ID='extract_Data' AIRFLOW_CTX_EXECUTION_DATE='2023-11-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-07T00:00:00+00:00'
+[2023-11-22T05:54:39.203+0000] {etl_pipeline.py:75} INFO - Uploading data to 'original_data'...
+[2023-11-22T05:54:40.123+0000] {etl_pipeline.py:82} INFO - Updating 'outdated' with current data...
+[2023-11-22T05:54:40.738+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-22T05:54:40.770+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=austin_shelter_data_dags, task_id=extract_Data, execution_date=20231107T000000, start_date=20231122T055434, end_date=20231122T055440
+[2023-11-22T05:54:40.852+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-22T05:54:40.885+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

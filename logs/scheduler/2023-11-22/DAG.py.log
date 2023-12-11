@@ -1,0 +1,206 @@
+[2023-11-22T05:47:38.062+0000] {processor.py:157} INFO - Started process (PID=37) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:47:38.064+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:47:38.066+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:47:38.066+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:47:39.491+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:47:39.489+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/DAG.py", line 3, in <module>
+    from Scripts.etl_pipeline import extract_data, load_data, transform_data
+ImportError: cannot import name 'extract_data' from 'Scripts.etl_pipeline' (/opt/airflow/dags/Scripts/etl_pipeline.py)
+[2023-11-22T05:47:39.492+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:47:39.513+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 1.456 seconds
+[2023-11-22T05:48:09.944+0000] {processor.py:157} INFO - Started process (PID=48) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:48:09.946+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:48:09.948+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:48:09.948+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:48:10.342+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:48:10.340+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/DAG.py", line 3, in <module>
+    from Scripts.etl_pipeline import extract_data, load_data, transform_data
+ImportError: cannot import name 'extract_data' from 'Scripts.etl_pipeline' (/opt/airflow/dags/Scripts/etl_pipeline.py)
+[2023-11-22T05:48:10.342+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:48:10.355+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 0.414 seconds
+[2023-11-22T05:48:37.202+0000] {processor.py:157} INFO - Started process (PID=37) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:48:37.204+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:48:37.209+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:48:37.208+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:48:38.160+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:48:38.156+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/DAG.py", line 3, in <module>
+    from Scripts.etl_pipeline import extract_data, load_data, transform_data
+ImportError: cannot import name 'extract_data' from 'Scripts.etl_pipeline' (/opt/airflow/dags/Scripts/etl_pipeline.py)
+[2023-11-22T05:48:38.160+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:48:38.175+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 0.979 seconds
+[2023-11-22T05:49:08.387+0000] {processor.py:157} INFO - Started process (PID=48) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:49:08.388+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:49:08.389+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:49:08.389+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:49:08.802+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:49:08.801+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/DAG.py", line 3, in <module>
+    from Scripts.etl_pipeline import extract_data, load_data, transform_data
+ImportError: cannot import name 'extract_data' from 'Scripts.etl_pipeline' (/opt/airflow/dags/Scripts/etl_pipeline.py)
+[2023-11-22T05:49:08.802+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:49:08.813+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 0.429 seconds
+[2023-11-22T05:49:39.128+0000] {processor.py:157} INFO - Started process (PID=59) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:49:39.129+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:49:39.131+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:49:39.131+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:49:39.501+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:49:39.500+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/DAG.py", line 3, in <module>
+    from Scripts.etl_pipeline import extract_data, load_data, transform_data
+ImportError: cannot import name 'extract_data' from 'Scripts.etl_pipeline' (/opt/airflow/dags/Scripts/etl_pipeline.py)
+[2023-11-22T05:49:39.501+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:49:39.511+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 0.387 seconds
+[2023-11-22T05:50:09.878+0000] {processor.py:157} INFO - Started process (PID=70) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:09.879+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:50:09.881+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:50:09.881+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:10.208+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:50:10.207+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/DAG.py", line 3, in <module>
+    from Scripts.etl_pipeline import extract_data, load_data, transform_data
+ImportError: cannot import name 'extract_data' from 'Scripts.etl_pipeline' (/opt/airflow/dags/Scripts/etl_pipeline.py)
+[2023-11-22T05:50:10.208+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:10.219+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 0.343 seconds
+[2023-11-22T05:50:37.595+0000] {processor.py:157} INFO - Started process (PID=80) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:37.597+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:50:37.601+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:50:37.600+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:37.614+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:50:37.613+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/DAG.py", line 3, in <module>
+    from dag.Scripts.etl_pipeline import extract_data, load_data, transform_data
+ModuleNotFoundError: No module named 'dag'
+[2023-11-22T05:50:37.614+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:37.631+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 0.050 seconds
+[2023-11-22T05:50:39.659+0000] {processor.py:157} INFO - Started process (PID=81) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:39.660+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:50:39.661+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:50:39.661+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:39.669+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:50:39.668+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/DAG.py", line 3, in <module>
+    from dags.Scripts.etl_pipeline import extract_data, load_data, transform_data
+ModuleNotFoundError: No module named 'dags'
+[2023-11-22T05:50:39.669+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:39.682+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 0.026 seconds
+[2023-11-22T05:50:48.201+0000] {processor.py:157} INFO - Started process (PID=84) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:48.201+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:50:48.204+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:50:48.204+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:48.571+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:50:48.569+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/DAG.py", line 3, in <module>
+    from Scripts.etl_pipeline import extract_data, load_data, transform_data
+ImportError: cannot import name 'extract_data' from 'Scripts.etl_pipeline' (/opt/airflow/dags/Scripts/etl_pipeline.py)
+[2023-11-22T05:50:48.571+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:48.583+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 0.384 seconds
+[2023-11-22T05:50:55.705+0000] {processor.py:157} INFO - Started process (PID=86) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:55.707+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:50:55.710+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:50:55.709+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:56.022+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:50:56.021+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/DAG.py", line 3, in <module>
+    from Scripts.etl_pipeline import extract_data, load_data, transform_data
+ImportError: cannot import name 'extract_data' from 'Scripts.etl_pipeline' (/opt/airflow/dags/Scripts/etl_pipeline.py)
+[2023-11-22T05:50:56.023+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:50:56.032+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 0.334 seconds
+[2023-11-22T05:51:26.554+0000] {processor.py:157} INFO - Started process (PID=97) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:51:26.556+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:51:26.560+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:51:26.559+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:51:26.990+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:51:26.988+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/DAG.py", line 3, in <module>
+    from Scripts.etl_pipeline import extract_data, load_data, transform_data
+ImportError: cannot import name 'extract_data' from 'Scripts.etl_pipeline' (/opt/airflow/dags/Scripts/etl_pipeline.py)
+[2023-11-22T05:51:26.990+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:51:27.006+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 0.460 seconds
+[2023-11-22T05:51:57.410+0000] {processor.py:157} INFO - Started process (PID=108) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:51:57.413+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:51:57.417+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:51:57.416+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:51:57.764+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:51:57.763+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/DAG.py", line 3, in <module>
+    from Scripts.etl_pipeline import extract_data, load_data, transform_data
+ImportError: cannot import name 'extract_data' from 'Scripts.etl_pipeline' (/opt/airflow/dags/Scripts/etl_pipeline.py)
+[2023-11-22T05:51:57.764+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:51:57.778+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 0.375 seconds
+[2023-11-22T05:52:28.127+0000] {processor.py:157} INFO - Started process (PID=119) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:52:28.129+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:52:28.134+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:52:28.134+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:52:28.549+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:52:28.548+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/DAG.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/DAG.py", line 3, in <module>
+    from Scripts.etl_pipeline import extract_data, load_data, transform_data
+ImportError: cannot import name 'extract_data' from 'Scripts.etl_pipeline' (/opt/airflow/dags/Scripts/etl_pipeline.py)
+[2023-11-22T05:52:28.549+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:52:28.569+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 0.449 seconds
+[2023-11-22T05:54:13.397+0000] {processor.py:157} INFO - Started process (PID=36) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:54:13.398+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:54:13.401+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:54:13.400+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:54:14.589+0000] {processor.py:839} INFO - DAG(s) dict_keys(['austin_shelter_data_dags']) retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:54:14.728+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:54:14.727+0000] {manager.py:499} INFO - Created Permission View: %s
+[2023-11-22T05:54:14.734+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:54:14.734+0000] {manager.py:499} INFO - Created Permission View: %s
+[2023-11-22T05:54:14.738+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:54:14.738+0000] {manager.py:499} INFO - Created Permission View: %s
+[2023-11-22T05:54:14.738+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:54:14.738+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T05:54:14.746+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:54:14.745+0000] {dag.py:2963} INFO - Creating ORM DAG for austin_shelter_data_dags
+[2023-11-22T05:54:14.752+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:54:14.752+0000] {dag.py:3722} INFO - Setting next_dagrun for austin_shelter_data_dags to 2023-11-01T00:00:00+00:00, run_after=2023-11-02T00:00:00+00:00
+[2023-11-22T05:54:14.764+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 1.370 seconds
+[2023-11-22T05:54:45.109+0000] {processor.py:157} INFO - Started process (PID=65) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:54:45.112+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:54:45.131+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:54:45.126+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:54:46.393+0000] {processor.py:839} INFO - DAG(s) dict_keys(['austin_shelter_data_dags']) retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:54:46.459+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:54:46.458+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T05:54:46.515+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 1.422 seconds
+[2023-11-22T05:55:17.022+0000] {processor.py:157} INFO - Started process (PID=117) to work on /opt/airflow/dags/DAG.py
+[2023-11-22T05:55:17.025+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/DAG.py for tasks to queue
+[2023-11-22T05:55:17.028+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:55:17.028+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/DAG.py
+[2023-11-22T05:55:17.561+0000] {processor.py:839} INFO - DAG(s) dict_keys(['austin_shelter_data_dags']) retrieved from /opt/airflow/dags/DAG.py
+[2023-11-22T05:55:17.582+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:55:17.581+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-22T05:55:17.598+0000] {logging_mixin.py:154} INFO - [2023-11-22T05:55:17.598+0000] {dag.py:3722} INFO - Setting next_dagrun for austin_shelter_data_dags to 2023-11-22T00:00:00+00:00, run_after=2023-11-23T00:00:00+00:00
+[2023-11-22T05:55:17.610+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/DAG.py took 0.605 seconds
